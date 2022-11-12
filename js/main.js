@@ -1,8 +1,6 @@
 
 $(document).ready(function () {
-	function isMobile() {
-		return $(window).width() < 992;
-	}
+
 
 	// change theme
 	$('.header__switch').on('click', function () {
@@ -11,24 +9,15 @@ $(document).ready(function () {
 	});
 
 	// mobile menu
-	function clickMenu() {
-		if (isMobile()) {
+	$(window).resize(function () {
+		if($(window).width() < 992) {
 			$('.header__menu-item').on('click', function () {
 				$('.header__menu-item').not(this).removeClass('active');
 				$(this).toggleClass('active');
 			});
-		} else {
-			$(window).resize(function () {
-				if (isMobile()) {
-					$('.header__menu-item').on('click', function () {
-						$('.header__menu-item').not(this).removeClass('active');
-						$(this).toggleClass('active');
-					});
-				}
-			});
 		}
-	}
-	clickMenu();
+	});
+
 
 
 	// infinite carousel top
@@ -90,7 +79,7 @@ $(document).ready(function () {
 
 	// bottomslider
 	gsap.from(".bottomslider", {
-		scale: 2,
+		scale: 1.6,
 		transformOrigin: "100% 100%",
 	});
 	gsap.to(".bottomslider", {
@@ -105,37 +94,43 @@ $(document).ready(function () {
 		}
 	});
 
-	// services
-	gsap.from(".services__item-img", {
-		scale: 0,
-		transformOrigin: "100% 100%",
+	$(window).scroll(function () {
+		var scrollPosition = $(this).scrollTop();
+		console.log(scrollPosition);
+		var t = scrollPosition * 0.001;
+
+		// services
+		gsap.from(".services__item-img", {
+			scale: 0,
+			transformOrigin: "100% 0%",
+		});
+		gsap.to(".services__item-img", {
+			scale: t,
+			transformOrigin: "100% 0%",
+			scrollTrigger: {
+				trigger: ".services__item",
+				start: "top 60%",
+				end: "top center",
+				scrub: 1,
+				markers: false,
+			},
+		});
 	});
-	gsap.to(".services__item-img", {
-		scale: 1,
-		transformOrigin: "100% 0%",
-		scrollTrigger: {
-			trigger: ".services__item",
-			start: "top 90%",
-			end: "top center",
-			scrub: 1,
-			markers: false,
-		},
-	});
-	gsap.from(".services__item-img", {
-		scale: 1,
-		transformOrigin: "0% 0%",
-	});
-	gsap.to(".services__item-img", {
-		scale: 0,
-		transformOrigin: "0% 0%",
-		scrollTrigger: {
-			trigger: ".services__item",
-			start: "top center",
-			end: "top 0",
-			scrub: 1,
-			markers: false,
-		},
-	});
+	// gsap.from(".services__item-img", {
+	// 	scale: 1,
+	// 	transformOrigin: "0% 0%",
+	// });
+	// gsap.to(".services__item-img", {
+	// 	scale: 0,
+	// 	transformOrigin: "0% 0%",
+	// 	scrollTrigger: {
+	// 		trigger: ".services__item",
+	// 		start: "top center",
+	// 		end: "top 0",
+	// 		scrub: 1,
+	// 		markers: false,
+	// 	},
+	// });
 
 	// custom Smooth Scroll for GSAP
 	/* 
@@ -231,8 +226,8 @@ $(document).ready(function () {
 
 
 
-		// styleselect
-		$("input, select").styler();
+	// styleselect
+	$("input, select").styler();
 
 
 
