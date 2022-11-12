@@ -11,21 +11,24 @@ $(document).ready(function () {
 	});
 
 	// mobile menu
-	$(window).resize(function () {
+	function clickMenu() {
 		if (isMobile()) {
 			$('.header__menu-item').on('click', function () {
 				$('.header__menu-item').not(this).removeClass('active');
 				$(this).toggleClass('active');
 			});
+		} else {
+			$(window).resize(function () {
+				if (isMobile()) {
+					$('.header__menu-item').on('click', function () {
+						$('.header__menu-item').not(this).removeClass('active');
+						$(this).toggleClass('active');
+					});
+				}
+			});
 		}
-	});
-	if (isMobile()) {
-		$('.header__menu-item').on('click', function () {
-			$('.header__menu-item').not(this).removeClass('active');
-			$(this).toggleClass('active');
-		});
 	}
-
+	clickMenu();
 
 
 	// infinite carousel top
@@ -34,7 +37,6 @@ $(document).ready(function () {
 		animateLeft($slides);
 	});
 	animateLeft($slides);
-
 	function animateLeft($slides) {
 		var slidesLength = $slides.find("li").length;
 		if (slidesLength > 3) {
@@ -51,7 +53,6 @@ $(document).ready(function () {
 		animateLeft($slides);
 	});
 	animateLeft($slides);
-
 	function animateLeft($slides) {
 		var slidesLength = $slides.find("li").length;
 		if (slidesLength > 3) {
@@ -108,7 +109,6 @@ $(document).ready(function () {
 	gsap.from(".services__item-img", {
 		scale: 0,
 		transformOrigin: "100% 100%",
-		pin: true,
 	});
 	gsap.to(".services__item-img", {
 		scale: 1,
@@ -124,7 +124,6 @@ $(document).ready(function () {
 	gsap.from(".services__item-img", {
 		scale: 1,
 		transformOrigin: "0% 0%",
-		pin: true,
 	});
 	gsap.to(".services__item-img", {
 		scale: 0,
@@ -137,8 +136,6 @@ $(document).ready(function () {
 			markers: false,
 		},
 	});
-
-
 
 	// custom Smooth Scroll for GSAP
 	/* 
@@ -219,10 +216,6 @@ $(document).ready(function () {
 		});
 	}
 
-
-	// styleselect
-	$("input, select").styler();
-
 	// slide frame animation
 	if ($('.frame-image').length) {
 		var slides = $('.frame-image');
@@ -236,7 +229,12 @@ $(document).ready(function () {
 		}
 	}
 
-	
+
+
+		// styleselect
+		$("input, select").styler();
+
+
 
 
 
