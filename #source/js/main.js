@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
 	function notMobile() {
@@ -22,7 +21,6 @@ $(document).ready(function () {
 		$('.header__menu-mobile').find('.header__menu-item').not($(this)).removeClass('active');
 		$(this).toggleClass('active');
 	});
-
 
 
 	// infinite carousel top
@@ -56,6 +54,21 @@ $(document).ready(function () {
 		}
 	}
 
+	// slide frame animation
+	$('.heroslider__sequence').slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		autoplay: true,
+		fade: true,
+		autoplaySpeed: 400,
+		speed: 0,
+		pauseOnHover: false,
+		pauseOnFocus: false,
+		swipe: false,
+	});
+
 
 	// change with click btn on slider
 	$('.heroslider__btn').on('click', function () {
@@ -84,7 +97,7 @@ $(document).ready(function () {
 
 		// bottomslider
 		gsap.from(".bottomslider", {
-			scale: 1.6,
+			scale: 1.8,
 			transformOrigin: "100% 100%",
 		});
 		gsap.to(".bottomslider", {
@@ -217,23 +230,13 @@ $(document).ready(function () {
 		}
 	}
 
-	// slide frame animation
-	if ($('.frame-image').length) {
-		var slides = $('.frame-image');
-		var currentSlide = 0;
-		var slideInterval = setInterval(nextSlide, 400);
 
-		function nextSlide() {
-			slides[currentSlide].className = 'frame-image';
-			currentSlide = (currentSlide + 1) % slides.length;
-			slides[currentSlide].className = 'frame-image active';
-		}
-	}
 
 
 
 	// styleselect
 	$("input, select").styler();
+
 
 
 
