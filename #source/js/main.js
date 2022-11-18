@@ -1,16 +1,12 @@
 $(document).ready(function () {
+		// preload
+		setTimeout(function () {
+			$('.pagewrapper').addClass('loaded');
+		}, 3000);
 
 	function notMobile() {
 		return $(window).width() >= 992;
 	}
-
-
-	// preload
-
-	setTimeout(function() {
-		$('.pagewrapper').addClass('loaded');
-	}, 3000);
-
 
 
 	// change theme
@@ -25,6 +21,8 @@ $(document).ready(function () {
 		$('.header__menu-mobile').find('.header__menu-item').not($(this)).removeClass('active');
 		$(this).toggleClass('active');
 	});
+
+
 
 
 	// infinite carousel top
@@ -42,8 +40,7 @@ $(document).ready(function () {
 		}
 	}
 
-
-	// infinite carousel bottom
+	// // infinite carousel bottom
 	$slides = $(".bottom__slide-list");
 	$slides.bind("contentchanged", function () {
 		animateLeft($slides);
@@ -85,17 +82,16 @@ $(document).ready(function () {
 	// GSAP motions
 	function motions() {
 		gsap.registerPlugin(ScrollTrigger);
-		const tl = gsap.timeline();
 
 		// topmarquee
 		gsap.to(".topmarquee", {
-			scale: 3,
+			scale: 2,
 			transformOrigin: "50% 100%",
 			scrollTrigger: {
 				trigger: ".header",
-				endTrigger: ".footer",
+				// endTrigger: ".footer",
 				start: "top 0px",
-				end: "top -300px",
+				end: "top -3000px",
 				scrub: 1,
 				markers: false,
 			}
@@ -120,7 +116,7 @@ $(document).ready(function () {
 
 		// services
 
-
+		// const tl = gsap.timeline();
 		// tl.fromTo(".services__item-img",
 		// 	{
 		// 		scale: 0,
@@ -162,15 +158,49 @@ $(document).ready(function () {
 		motions();
 	}
 
+	// clock
+	function reset() {
+		let timeList = document.querySelectorAll(".P");
+		timeList.forEach(P => {
+			if (P.childElementCount <= 0) {
+				P.appendChild(document.querySelector("#zone_temp").firstElementChild.cloneNode(true));
+				P.appendChild(document.querySelector("#zone_temp").lastElementChild.cloneNode(true));
+			}
+			P.querySelector(".name").innerText = P.id;
+			let time_zone = P.getAttribute("time-zone");
+			let localTime = getTime(time_zone);
+			P.querySelector(".time").innerText = localTime.time;
+		});
+	}
+	setInterval(reset, 1000);
+	function getTime(timeZone) {
+		let now = new Date(Date.now());
+		let time = now.toLocaleTimeString('en-US', { timeZone, hour12: false });
+		return { time };
+	}
+
+	// styleselect
+	$("input, select").styler();
+
+	// scroll to anchor
+	document.querySelectorAll('.header__btn a[href^="#"').forEach(link => {
+		link.addEventListener('click', function (e) {
+			e.preventDefault();
+			let href = this.getAttribute('href').substring(1);
+			const scrollTarget = document.getElementById(href);
+			const topOffset = document.querySelector('.header').offsetHeight;
+			const elementPosition = scrollTarget.getBoundingClientRect().top;
+			const offsetPosition = elementPosition - topOffset;
+
+			window.scrollBy({
+				top: offsetPosition,
+				behavior: 'smooth'
+			});
+		});
+	});
+
 	// custom Smooth Scroll for GSAP
-	/* 
-	Setup: wrap your content <div> in another <div> that will serve as the viewport.
-	Call this function FIRST (before you create your ScrollTriggers); it sets the 
-	default "scroller" for you (otherwise it'd be the window/body, but it should be 
-	the content <div>) 
-	*/
 	smoothScroll("#scrollContent");
-	// this is the helper function that sets it all up. Pass in the content <div> and then the wrapping viewport <div> (can be the elements or selector text). It also sets the default "scroller" to the content so you don't have to do that on all your ScrollTriggers.
 	function smoothScroll(content, viewport, smoothness) {
 		content = gsap.utils.toArray(content)[0];
 		smoothness = smoothness || 1;
@@ -240,36 +270,6 @@ $(document).ready(function () {
 			onRefresh: killScrub // when the screen resizes, we just want the animation to immediately go to the appropriate spot rather than animating there, so basically kill the scrub.
 		});
 	}
-
-
-
-	// clock
-	function reset() {
-		let timeList = document.querySelectorAll(".P");
-		timeList.forEach(P => {
-			if (P.childElementCount <= 0) {
-				P.appendChild(document.querySelector("#zone_temp").firstElementChild.cloneNode(true));
-				P.appendChild(document.querySelector("#zone_temp").lastElementChild.cloneNode(true));
-			}
-			P.querySelector(".name").innerText = P.id;
-			let time_zone = P.getAttribute("time-zone");
-			let localTime = getTime(time_zone);
-			P.querySelector(".time").innerText = localTime.time;
-		});
-	}
-	setInterval(reset, 1000);
-	function getTime(timeZone) {
-		let now = new Date(Date.now());
-		let time = now.toLocaleTimeString('en-US', { timeZone, hour12: false });
-		return { time };
-	}
-
-
-
-
-
-	// styleselect
-	$("input, select").styler();
 
 
 
