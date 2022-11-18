@@ -285,7 +285,7 @@ body {
 }
 
 .heromarquee {
-  background-color: transparent;
+  background-color: #fff;
   height: 300px;
   position: relative;
   display: -webkit-box;
@@ -327,6 +327,9 @@ body {
   transition: 0.4s;
 }
 
+.dark-theme .heromarquee {
+  background-color: #121212;
+}
 .dark-theme .heromarquee .heromarquee__item .darktext {
   fill: #fff;
 }
@@ -857,7 +860,15 @@ body {
   .preloader,
 .heroimage,
 .pagewrapper.loaded .preloader {
-    height: calc(100vh - 440px);
+    height: calc(100vh - 420px);
+  }
+  .topmarquee {
+    opacity: 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .pagewrapper.loaded .topmarquee {
+    opacity: 1;
   }
   .preloader__wrapper {
     display: none;
