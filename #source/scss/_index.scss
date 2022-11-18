@@ -14,12 +14,17 @@
     width: 100%;
     height: 100%;
     display: flex;
-    animation: 3.3s ease-in-out  preloadShow;
+    animation: 3.3s ease-in-out preloadShow;
+}
+
+.preloader__wrapper-mobile {
+    display: none;
 }
 
 .pagewrapper.loaded {
     .preloader {
-        height: calc(100vh - 375px);
+        height: calc(100vh - 385px);
+        min-height: 400px;
         z-index: inherit;
     }
 }
@@ -37,10 +42,11 @@
 
 
     100% {
-        height: calc(100vh - 375px);
+        height: calc(100vh - 385px);
         top: 0;
     }
 }
+
 @keyframes preloadHide {
     0% {
         background-color: #fff;
@@ -110,7 +116,7 @@
 
 // heroimage section
 .heroimage {
-    height: calc(100vh - 375px);
+    height: calc(100vh - 385px);
     width: 100%;
     position: relative;
     min-height: 400px;
@@ -647,6 +653,50 @@
 }
 
 @media (max-width:768px) {
+
+    .pagewrapper.loaded .preloader,
+    .heroimage {
+        height: calc(100vh - 413px);
+    }
+
+    .preloader__wrapper {
+        display: none;
+    }
+
+    .preloader__wrapper-mobile {
+        display: block;
+        height: 100%;
+        position: relative;
+    }
+
+    .mobile__circle {
+        width: 50vw;
+        height: 50vw;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        box-shadow: 4px 4px 13px rgba(0, 0, 0, 0.15), -11px -10px 12px rgba(255, 255, 255, 0.15);
+
+        &-gold {
+            background: linear-gradient(142.64deg, #D1A451 14.68%, #C89947 85.51%);
+            left: -50%;
+        }
+
+        &-purple {
+            background: linear-gradient(142.64deg, #DA9B8C 14.68%, #D5A092 85.51%);
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &-black {
+            background: linear-gradient(142.64deg, #1C2023 14.68%, #182023 85.51%);
+        }
+    }
+
+
+
+
     .heromarquee.bottommarquee {
         margin-bottom: 40px;
         height: 180px;
@@ -668,9 +718,6 @@
         padding: 0;
     }
 
-    .heroimage {
-        height: auto;
-    }
 
     .formsect {
         padding: 60px 0 60px;
