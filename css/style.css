@@ -860,7 +860,7 @@ body {
   .preloader,
 .heroimage,
 .pagewrapper.loaded .preloader {
-    height: calc(100vh - 413px);
+    height: calc(100vh - 414px);
   }
   .topmarquee {
     opacity: 0;
@@ -1034,6 +1034,11 @@ body {
   }
 }
 @media (max-width: 576px) {
+  .preloader,
+.heroimage,
+.pagewrapper.loaded .preloader {
+    height: calc(100vh - 334px);
+  }
   .formsect__wrapper h2 {
     font-size: 36px;
   }

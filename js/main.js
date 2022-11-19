@@ -116,41 +116,7 @@ $(document).ready(function () {
 
 		// services
 
-		// const tl = gsap.timeline();
-		// tl.fromTo(".services__item-img",
-		// 	{
-		// 		scale: 0,
-		// 		transformOrigin: "0% 0%",
-		// 	},
-		// 	{
-		// 		scale: 1,
-		// 		transformOrigin: "100% 0%",
-		// 		scrollTrigger: {
-		// 			trigger: ".services__item",
-		// 			start: "top 80%",
-		// 			end: "top 10%",
-		// 			scrub: 1,
-		// 			markers: true,
-		// 		},
-		// 	});
 
-		// let scrollPosition = 0;
-		// let scaleNum = 0;
-		// let conteinerHeight = $('.services__item').offsetHeight;
-		// ScrollTrigger.addEventListener("scrollStart", function () {
-		// 	scrollPosition = window.pageYOffset;
-		// 	if (scrollPosition > 800) {
-		// 		tl.to(".services__item-img", {
-		// 			scale: 1,
-		// 		});
-		// 	} else {
-		// 		tl.to(".services__item-img", {
-		// 			scale: 0,
-		// 		});
-		// 	}
-		// 	console.log(scrollPosition);
-		// 	console.log(scaleNum);
-		// });
 	}
 
 
