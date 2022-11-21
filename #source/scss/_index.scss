@@ -232,8 +232,13 @@
 }
 
 // services section
+.services{
+height: 90vh;
+width: 400vw;
+}
 .services__item {
-  width: 100%;
+  width: 100vw;
+  height: 100%;
   border-top: 1px solid #121212;
   margin: 0;
   background-color: transparent;
