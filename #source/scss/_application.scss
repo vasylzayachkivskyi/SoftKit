@@ -1,0 +1,140 @@
+.app-heroimage {
+    background: #EED480;
+    height: calc(100vh - 85px);
+    width: 100%;
+    position: relative;
+    min-height: 650px;
+}
+
+.app-firstsect {
+    padding-top: 120px;
+}
+
+.sectcontent {
+    width: 100%;
+    padding-bottom: 100px;
+
+    img {
+        width: 100%;
+        background-size: cover;
+    }
+
+    p {
+        margin: 100px auto 0;
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 160%;
+        text-align: center;
+        letter-spacing: 0.09em;
+        color: currentColor;
+        max-width: 90%;
+    }
+}
+
+.app-fourthsect {
+    position: relative;
+    width: 100%;
+    margin-bottom: 150px;
+    background: #fff;
+
+    img {
+        width: 100%;
+        background-size: cover;
+    }
+}
+
+
+.app-fourthsect__top,
+.app-fourthsect__bottom {
+    position: absolute;
+    width: 60%;
+}
+
+.secttext {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 160%;
+    text-align: right;
+    letter-spacing: 0.09em;
+    color: #121212;
+}
+
+.app-fourthsect__top {
+    top: 10px;
+    right: 3%;
+    text-align: right;
+}
+
+.app-fourthsect__bottom {
+    text-align: left;
+    bottom: 10px;
+    left: 3%;
+}
+
+// RESPONSIVE
+
+@media(max-width: 1600px) {
+
+    .sectcontent p,
+    .secttext {
+        font-size: 26px;
+    }
+}
+
+@media(max-width: 1200px) {
+    .app-firstsect {
+        padding-top: 70px;
+    }
+
+    .app-fourthsect {
+        margin-bottom: 90px;
+    }
+
+    .sectcontent {
+        padding-bottom: 80px;
+
+        p {
+            margin: 80px auto 0;
+            font-size: 22px;
+        }
+    }
+
+    .secttext {
+        font-size: 22px;
+    }
+}
+
+@media(max-width: 767.8px) {
+    .app-firstsect {
+        padding-top: 50px;
+    }
+
+    .sectcontent {
+        padding-bottom: 40px;
+
+        p {
+            margin: 50px auto 0;
+            font-size: 16px;
+        }
+    }
+
+    .secttext {
+        font-size: 15px;
+    }
+
+    .app-fourthsect__top {
+        width: 94%;
+    }
+
+    .app-fourthsect__bottom {
+        font-size: 15px;
+        width: 75%;
+    }
+
+    .app-fourthsect {
+        position: relative;
+        width: 100%;
+        margin-bottom: 150px;
+        padding: 140px 0 90px;
+    }
+}

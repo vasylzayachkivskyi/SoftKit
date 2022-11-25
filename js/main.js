@@ -1,8 +1,8 @@
 $(document).ready(function () {
-		// preload
-		setTimeout(function () {
-			$('.pagewrapper').addClass('loaded');
-		}, 3000);
+	// preload
+	setTimeout(function () {
+		$('.pagewrapper').addClass('loaded');
+	}, 3220);
 
 	function notMobile() {
 		return $(window).width() >= 992;
@@ -34,7 +34,7 @@ $(document).ready(function () {
 	function animateLeft($slides) {
 		var slidesLength = $slides.find("li").length;
 		if (slidesLength > 3) {
-			$slides.find("li:nth-last-child(-n+3)").clone().prependTo($slides);
+			$slides.find("li:nth-last-child(-n+5)").clone().prependTo($slides);
 			$slides.addClass("animate-left");
 			$slides.css("animation-duration", slidesLength * 3 + "s");
 		}
@@ -49,9 +49,9 @@ $(document).ready(function () {
 	function animateLeft($slides) {
 		var slidesLength = $slides.find("li").length;
 		if (slidesLength > 3) {
-			$slides.find("li:nth-last-child(-n+3)").clone().prependTo($slides);
+			$slides.find("li:nth-last-child(-n+5)").clone().prependTo($slides);
 			$slides.addClass("animate-left");
-			$slides.css("animation-duration", slidesLength * 2 + "s");
+			$slides.css("animation-duration", slidesLength * 3 + "s");
 		}
 	}
 
@@ -85,21 +85,19 @@ $(document).ready(function () {
 
 		// topmarquee
 		gsap.to(".topmarquee", {
-			scale: 2,
+			scale: 3,
 			transformOrigin: "50% 100%",
 			scrollTrigger: {
 				trigger: ".header",
-				// endTrigger: ".footer",
 				start: "top 0px",
 				end: "top -3000px",
-				scrub: 1,
-				markers: false,
+				scrub: 0.8,
 			}
 		});
 
 		// bottommarquee
 		gsap.fromTo(".bottommarquee", {
-			scale: 1.8,
+			scale: 2,
 			transformOrigin: "100% 100%"
 		},
 			{
@@ -109,35 +107,33 @@ $(document).ready(function () {
 					trigger: ".bottomtriger",
 					start: "top 100%",
 					end: "top 0",
-					scrub: 1,
+					scrub: 0.8,
 					markers: false,
 				}
 			});
-
-		// services
-
-		const tl = gsap.timeline();
-		tl.fromTo('.second', {x: '-100%', y: '+100%'}, {y: 0});
-		tl.fromTo('.third', {x: '-100%'}, {x: '-200%'});
-		tl.fromTo('.fourth', {x: '-400%'}, {x: '-300%'});
-
-		const main = document.querySelector('.services');
-		ScrollTrigger.create({
-			animation: tl,
-			trigger: '.services',
-			start: 'top top',
-			end: () => main.offsetWidth / 2,
-			scrub: true,
-			pin: true
-		});
-
-
 	}
 
 
 	if (notMobile()) {
 		motions();
 	}
+
+	// services
+
+	const tl = gsap.timeline();
+	// tl.fromTo('.services__item-first', { x: '0%', y: '80%', ease : "easyInOut" }, { y: '5%' });
+	tl.fromTo('.services__item-second', { x: '-100%', y: '85%', ease : "easyInOut" }, { y: '5%' });
+	tl.fromTo('.services__item-third', { x: '-200%', y: '90%', ease : "easyInOut" }, { y: '10%' });
+	tl.fromTo('.services__item-fourth', { x: '-300%', y: '95%', ease : "easyInOut"}, { y: '15%' });
+
+	ScrollTrigger.create({
+		animation: tl,
+		trigger: '.services',
+		start: 'top top',
+		end: '1200px',
+		scrub: 1,
+		pin: true,
+	});
 
 	// clock
 	function reset() {

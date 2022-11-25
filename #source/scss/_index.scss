@@ -16,6 +16,7 @@
   display: flex;
   animation: 3.3s ease-in-out preloadShow;
 }
+
 .preloader__wrapper-mobile {
   display: none;
 }
@@ -39,11 +40,16 @@
     top: -85px;
   }
 
+  90% {
+    height: calc(100vh - 385px);
+    top: 0;
+  }
   100% {
     height: calc(100vh - 385px);
     top: 0;
   }
 }
+
 @keyframes preloadHide {
   0% {
     background-color: #fff;
@@ -145,6 +151,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  img{
+    width: 100%;
+    object-fit: cover;
+  }
 
   svg {
     cursor: pointer;
@@ -163,6 +173,7 @@
 .dark-theme {
   .heromarquee {
     background-color: #121212;
+
     .heromarquee__item {
       .darktext {
         fill: #fff;
@@ -216,12 +227,14 @@
 }
 
 .animate-left {
-  animation: moveLeft 30s linear infinite;
+  transition: 1s;
+  animation: moveLeft 10s linear infinite;
 }
 
 @keyframes moveLeft {
   100% {
-    transform: translate3d(calc(-100% + 100vw), 0, 0);
+    // transform: translate3d(calc(-100% + 100vw), 0, 0);
+    transform: translate(calc(-100% + 150vw));
   }
 }
 
@@ -232,38 +245,45 @@
 }
 
 // services section
-.services{
-height: 90vh;
-width: 400vw;
+.services {
+  height: 100vh;
+  width: 400vw;
+  display: flex;
 }
+
 .services__item {
   width: 100vw;
   height: 100%;
   border-top: 1px solid #121212;
+  background-color: #fff;
   margin: 0;
-  background-color: transparent;
-  padding: 0 15px 20px;
 
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
 }
 
 .services__item-img {
-  width: 100%;
-  margin: 0;
+  text-align: center;
+  height: 100%;
+  margin: 0 auto;
+  img {
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
 }
 
+
 .services__item-header {
-  margin-bottom: 40px;
-  padding-top: 20px;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-bottom: 1px solid #121212;
 
   p {
     color: currentColor;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 150%;
     text-align: center;
     letter-spacing: 0.11em;
@@ -274,15 +294,22 @@ width: 400vw;
 .dark-theme {
   .services__item {
     border-color: #fff;
+    background-color: #121212;
+  }
+
+  .services__item-header {
+    background-color: #121212;
   }
 }
 
 // formsect section
 .formsect {
   padding: 67px 0 120px;
+  margin-top: 100px;
 }
 
 .formsect__wrapper {
+
   .formsect__top,
   .formsect__bottom {
     display: flex;
@@ -323,7 +350,7 @@ width: 400vw;
         width: 200vw;
         height: 100%;
         background: #fdbca7;
-        z-index: -1;
+        z-index: 1;
       }
     }
   }
@@ -341,6 +368,8 @@ width: 400vw;
     line-height: 17px;
     letter-spacing: 0.06em;
     color: currentColor;
+    position: relative;
+    z-index: 2;
 
     &::placeholder {
       transition: 0.3s;
@@ -398,6 +427,8 @@ width: 400vw;
       font-weight: 300;
       font-size: 14px;
       line-height: 150%;
+      position: relative;
+      z-index: 2;
     }
 
     .step-number {
@@ -425,7 +456,7 @@ width: 400vw;
         width: 200vw;
         height: 100%;
         background: #fdbca7;
-        z-index: -1;
+        z-index: 1;
       }
 
       .step-number {
@@ -464,6 +495,7 @@ width: 400vw;
 }
 
 .formsect__bottom {
+
   .formsect__left,
   .formsect__right {
     padding-right: 50px;
@@ -562,7 +594,7 @@ width: 400vw;
   p {
     display: inline-block;
 
-    & + p {
+    &+p {
       margin-left: 5px;
     }
 
@@ -592,33 +624,41 @@ width: 400vw;
     width: 18vw;
     height: 18vw;
   }
+
   .heromarquee {
     height: 240px;
   }
+
   .pagewrapper.loaded {
     .preloader {
       height: calc(100vh - 325px);
     }
   }
+
   .heroimage {
     height: calc(100vh - 325px);
   }
+
   @keyframes preloadShow {
     0% {
       height: 0;
       top: 50%;
     }
+
     60% {
       height: 100vh;
       top: -85px;
     }
+
     100% {
       height: calc(100vh - 325px);
       top: 0;
     }
   }
 }
+
 @media (max-width: 1200px) {
+
   .bottommarquee,
   .heromarquee__sequence-image img {
     height: 200px;
@@ -671,15 +711,18 @@ width: 400vw;
 }
 
 @media (max-width: 768px) {
+
   .preloader,
   .heroimage,
   .pagewrapper.loaded .preloader {
     height: calc(100vh - 414px);
   }
+
   .topmarquee {
     opacity: 0;
     transition: 0.5s;
   }
+
   .pagewrapper.loaded {
     .topmarquee {
       opacity: 1;
@@ -689,6 +732,7 @@ width: 400vw;
   .preloader__wrapper {
     display: none;
   }
+
   .preloader__wrapper-mobile {
     display: block;
     position: relative;
@@ -696,51 +740,61 @@ width: 400vw;
     width: 100%;
     overflow: hidden;
   }
+
   .mobile__circle {
     position: absolute;
     top: 50%;
-    transform: translate(240%, -50%);
+    transform: translate(260%, -50%);
     width: 45vw;
     height: 45vw;
     border-radius: 50%;
     animation: 3.2s ease-in-out circleMobile;
+
     &-gold {
       animation-delay: 0.3s;
       left: -10%;
       background: linear-gradient(142.64deg, #d1a451 14.68%, #c89947 85.51%);
     }
+
     &-purple {
       animation-delay: 0.8s;
       left: 26%;
       background: linear-gradient(142.64deg, #da9b8c 14.68%, #d5a092 85.51%);
     }
+
     &-black {
       animation-delay: 1.3s;
       right: -10%;
       background: linear-gradient(142.64deg, #1c2023 14.68%, #182023 85.51%);
     }
   }
+
   .pagewrapper.loaded .mobile__circle {
     transform: translate(0%, -50%);
   }
+
   @keyframes circleMobile {
     0% {
       opacity: 0;
       transform: translate(240%, -50%);
     }
+
     45% {
       opacity: 1;
       transform: translate(0%, -50%) scale(1);
     }
+
     75% {
       opacity: 1;
       transform: translate(0%, -50%) scale(1.15);
     }
+
     100% {
       opacity: 1;
       transform: translate(0%, -50%) scale(1);
     }
   }
+
   .heromarquee.bottommarquee {
     margin-bottom: 40px;
     height: 180px;
@@ -840,11 +894,13 @@ width: 400vw;
 }
 
 @media (max-width: 576px) {
+
   .preloader,
   .heroimage,
   .pagewrapper.loaded .preloader {
     height: calc(100vh - 334px);
   }
+
   .formsect__wrapper h2 {
     font-size: 36px;
   }
@@ -889,7 +945,7 @@ width: 400vw;
   }
 
   .formsect__right li .step-number {
-    right: -25px;
+    right: -20px;
   }
 
   .formsect__btn {
@@ -910,7 +966,7 @@ width: 400vw;
     p {
       display: block;
 
-      & + p {
+      &+p {
         margin: 5px 0 0;
       }
     }
