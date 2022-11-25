@@ -33,13 +33,13 @@
   width: 60%;
   padding-left: 5%;
 
-  > ul {
+  >ul {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    > li {
-      > a {
+    >li {
+      >a {
         font-weight: 300;
         font-size: 16px;
         line-height: 130%;
@@ -77,7 +77,7 @@
     left: 0;
     top: 100%;
 
-    > p {
+    >p {
       font-size: 13px;
       line-height: 150%;
       text-align: center;
@@ -109,7 +109,7 @@
         letter-spacing: 0.11em;
         color: #fff;
 
-        & + p {
+        &+p {
           margin-left: 50px;
 
           &:before {
@@ -143,6 +143,7 @@
     }
 
     .sub-menu__col {
+
       a,
       p {
         display: block;
@@ -192,7 +193,7 @@
     transform: translateY(0px);
   }
 
-  > a::after {
+  >a::after {
     width: 100%;
     left: 0;
   }
@@ -206,7 +207,7 @@
     transform: translateY(0px);
   }
 
-  > a::after {
+  >a::after {
     width: 100%;
     left: 0;
   }
@@ -224,6 +225,7 @@
     align-items: center;
   }
 }
+
 .pagewrapper.loaded {
   .header__box {
     opacity: 1;
@@ -267,7 +269,8 @@
     position: relative;
     z-index: 2;
   }
-  ul{
+
+  ul {
     border: 1px #121212 solid;
     border-radius: 20px;
     display: flex;
@@ -276,9 +279,11 @@
     width: 60px;
     padding: 0 7px;
     height: 32px;
-    .current-lang{
+
+    .current-lang {
       position: relative;
-      &:after{
+
+      &:after {
         content: '';
         display: block;
         position: absolute;
@@ -342,7 +347,8 @@
 .dark-theme {
   .header__lang ul {
     border: 1px solid #fff;
-}
+  }
+
   .header__logo {
     .white-logo {
       display: block;
@@ -353,7 +359,7 @@
     }
   }
 
-  .header__menu > ul > li > a:after {
+  .header__menu>ul>li>a:after {
     background-color: #fff;
   }
 
@@ -365,6 +371,7 @@
   }
 
   .header__switch {
+
     &:before,
     &:after {
       border: 0.3px solid #fff;
@@ -374,7 +381,7 @@
   .sub-menu {
     background-color: #121212;
 
-    > p {
+    >p {
       color: #fff;
     }
 
@@ -393,8 +400,8 @@
     }
   }
 
-  .header__menu-mobile > ul > li > a:after,
-  .header__menu > ul > li > a:after {
+  .header__menu-mobile>ul>li>a:after,
+  .header__menu>ul>li>a:after {
     background-color: #fff;
   }
 
@@ -429,6 +436,7 @@
 }
 
 .pagewrapper.loaded {
+
   .header__logo,
   .header__menu-item {
     position: initial;
@@ -457,7 +465,7 @@
 // RESPONSIVE
 
 @media (max-width: 992px) {
-  .header__menu > ul > li > a {
+  .header__menu>ul>li>a {
     font-size: 14px;
   }
 
@@ -498,11 +506,11 @@
     max-width: 30%;
   }
 
-  .header__menu-mobile .sub-menu blockquote p + p {
+  .header__menu-mobile .sub-menu blockquote p+p {
     margin-left: 10px;
   }
 
-  .header__menu-mobile .sub-menu blockquote p + p:before {
+  .header__menu-mobile .sub-menu blockquote p+p:before {
     margin-right: 10px;
   }
 
@@ -523,7 +531,7 @@
       width: 100%;
       text-align: center;
 
-      & + li {
+      &+li {
         margin-top: 25px;
       }
     }
@@ -551,6 +559,24 @@
 }
 
 @media (max-width: 576px) {
+  .header__lang ul .lang-item {
+    padding-bottom: 2px;
+}
+  .header__lang ul {
+    width: 53px;
+    height: 26px;
+    padding: 0 5px;
+
+    .current-lang:after {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  .header__lang a {
+    font-size: 10px;
+  }
+
   .header__menu-mobile .sub-menu .sub-container {
     padding: 0px 15px;
   }
@@ -559,26 +585,30 @@
     font-size: 10px;
   }
 
-  .header__menu-mobile .sub-menu blockquote p + p {
+  .header__menu-mobile .sub-menu blockquote p+p {
     margin-left: 5px;
   }
 
-  .header__menu-mobile .sub-menu blockquote p + p:before {
+  .header__menu-mobile .sub-menu blockquote p+p:before {
     margin-right: 5px;
     font-size: 10px;
   }
 }
+
 @media (max-width: 375px) {
-  .header__menu-mobile > ul > li > a,
-  .header__menu > ul > li > a {
+
+  .header__menu-mobile>ul>li>a,
+  .header__menu>ul>li>a {
     font-size: 14px;
   }
+
   .header__menu-mobile .sub-menu span {
     font-size: 24px;
     margin-top: 20px;
   }
+
   .header__menu-mobile .sub-menu blockquote p,
-  .header__menu-mobile .sub-menu blockquote p + p:before {
+  .header__menu-mobile .sub-menu blockquote p+p:before {
     font-size: 8px;
   }
 }

@@ -1,0 +1,119 @@
+.business-heroimage {
+  height: calc(100vh - 85px);
+  width: 100%;
+  svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.bh-box2 {
+  transform-origin: 800px 443px;
+  opacity: 0;
+  transform: scale(0.3) rotate(-180deg);
+  animation: 3.5s ease-in-out bhboxAnim2;
+}
+.bh-box1 {
+  transform: translateX(-130%);
+  animation: 3s ease-in-out 0.5s bhboxAnim1;
+}
+.bh-box3 {
+  transform: translateX(130%);
+  animation: 3s ease-in-out 1s bhboxAnim3;
+}
+.bh-text {
+  opacity: 0;
+  animation: 2s ease-in-out 2s bhtextAnim;
+}
+.bh-circle1{
+  opacity: 0;
+  animation: 1.5s ease-in-out 2.3s bhtextAnim;
+}
+.bh-circle2{
+  opacity: 0;
+  animation: 1.5s ease-in-out 2.6s bhtextAnim;
+}
+.bh-circle3{
+  opacity: 0;
+  animation: 1.5s ease-in-out 2.9s bhtextAnim;
+}
+
+.pagewrapper.loaded {
+  .bh-box2 {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+  .bh-box1 {
+    transform: translateX(0%);
+  }
+  .bh-box3 {
+    transform: translateX(0%);
+  }
+  .bh-text {
+    opacity: 1;
+  }
+  .bh-circle1,
+  .bh-circle2,
+  .bh-circle3{
+    opacity: 1;
+  }
+}
+
+@keyframes bhtextAnim {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes bhboxAnim2 {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotate(-180deg);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+@keyframes bhboxAnim1 {
+  0% {
+    opacity: 0;
+    transform: translateX(-130%);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes bhboxAnim3 {
+  0% {
+    opacity: 0;
+    transform: translateX(150%);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
