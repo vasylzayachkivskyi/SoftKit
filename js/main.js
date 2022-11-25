@@ -23,35 +23,33 @@ $(document).ready(function () {
 	});
 
 
-
-
 	// infinite carousel top
-	$slides = $(".top__slide-list");
+	$slides = $(this).find(".top__slide-list");
 	$slides.bind("contentchanged", function () {
 		animateLeft($slides);
 	});
 	animateLeft($slides);
 	function animateLeft($slides) {
 		var slidesLength = $slides.find("li").length;
-		if (slidesLength > 3) {
+		if (slidesLength > 0) {
 			$slides.find("li:nth-last-child(-n+5)").clone().prependTo($slides);
 			$slides.addClass("animate-left");
 			$slides.css("animation-duration", slidesLength * 3 + "s");
 		}
 	}
 
-	// // infinite carousel bottom
-	$slides = $(".bottom__slide-list");
+	// infinite carousel bottom
+	$slides = $(this).find(".bottom__slide-list");
 	$slides.bind("contentchanged", function () {
 		animateLeft($slides);
 	});
 	animateLeft($slides);
 	function animateLeft($slides) {
 		var slidesLength = $slides.find("li").length;
-		if (slidesLength > 3) {
+		if (slidesLength > 0) {
 			$slides.find("li:nth-last-child(-n+5)").clone().prependTo($slides);
 			$slides.addClass("animate-left");
-			$slides.css("animation-duration", slidesLength * 3 + "s");
+			$slides.css("animation-duration", slidesLength * 4 + "s");
 		}
 	}
 

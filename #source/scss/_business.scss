@@ -8,6 +8,14 @@
   }
 }
 
+.business-firstsect{
+  padding-top: 80px;
+}
+
+.business-heroimage__mobile{
+  display: none;
+}
+
 .bh-box2 {
   transform-origin: 800px 443px;
   opacity: 0;
@@ -116,4 +124,18 @@
     opacity: 1;
     transform: translateX(0%);
   }
+}
+
+
+@media(max-width: 767.8px) {
+  .business-heroimage__desctope{
+    display: none;
+  }
+  .business-heroimage__mobile{
+    display: block;
+    height: 100%;
+  }
+  .business-heroimage {
+    height: calc(100vh - 179px);
+}
 }

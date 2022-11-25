@@ -1200,6 +1200,12 @@ body {
   position: relative;
   min-height: 650px;
 }
+.app-heroimage img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
+}
 
 .app-firstsect {
   padding-top: 120px;
@@ -1324,6 +1330,10 @@ body {
      object-fit: cover;
   -o-object-position: top;
      object-position: top;
+}
+
+.design-firstsect {
+  padding-top: 80px;
 }
 
 @media (max-width: 992px) {
@@ -1512,6 +1522,14 @@ body {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.business-firstsect {
+  padding-top: 80px;
+}
+
+.business-heroimage__mobile {
+  display: none;
 }
 
 .bh-box2 {
@@ -1719,6 +1737,18 @@ body {
     opacity: 1;
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
+  }
+}
+@media (max-width: 767.8px) {
+  .business-heroimage__desctope {
+    display: none;
+  }
+  .business-heroimage__mobile {
+    display: block;
+    height: 100%;
+  }
+  .business-heroimage {
+    height: calc(100vh - 179px);
   }
 }
 .header {
