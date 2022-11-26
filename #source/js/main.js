@@ -2,7 +2,7 @@ $(document).ready(function () {
 	// preload
 	setTimeout(function () {
 		$('.pagewrapper').addClass('loaded');
-	}, 3220);
+	}, 3100);
 
 	function notMobile() {
 		return $(window).width() >= 992;
@@ -23,35 +23,33 @@ $(document).ready(function () {
 	});
 
 
-
-
 	// infinite carousel top
-	$slides = $(".top__slide-list");
+	$slides = $(this).find(".top__slide-list");
 	$slides.bind("contentchanged", function () {
 		animateLeft($slides);
 	});
 	animateLeft($slides);
 	function animateLeft($slides) {
 		var slidesLength = $slides.find("li").length;
-		if (slidesLength > 3) {
+		if (slidesLength > 0) {
 			$slides.find("li:nth-last-child(-n+5)").clone().prependTo($slides);
 			$slides.addClass("animate-left");
 			$slides.css("animation-duration", slidesLength * 3 + "s");
 		}
 	}
 
-	// // infinite carousel bottom
-	$slides = $(".bottom__slide-list");
+	// infinite carousel bottom
+	$slides = $(this).find(".bottom__slide-list");
 	$slides.bind("contentchanged", function () {
 		animateLeft($slides);
 	});
 	animateLeft($slides);
 	function animateLeft($slides) {
 		var slidesLength = $slides.find("li").length;
-		if (slidesLength > 3) {
+		if (slidesLength > 0) {
 			$slides.find("li:nth-last-child(-n+5)").clone().prependTo($slides);
 			$slides.addClass("animate-left");
-			$slides.css("animation-duration", slidesLength * 3 + "s");
+			$slides.css("animation-duration", slidesLength * 4 + "s");
 		}
 	}
 
@@ -121,19 +119,35 @@ $(document).ready(function () {
 	// services
 
 	const tl = gsap.timeline();
-	// tl.fromTo('.services__item-first', { x: '0%', y: '80%', ease : "easyInOut" }, { y: '5%' });
+	
 	tl.fromTo('.services__item-second', { x: '-100%', y: '85%', ease : "easyInOut" }, { y: '5%' });
-	tl.fromTo('.services__item-third', { x: '-200%', y: '90%', ease : "easyInOut" }, { y: '10%' });
-	tl.fromTo('.services__item-fourth', { x: '-300%', y: '95%', ease : "easyInOut"}, { y: '15%' });
-
+	tl.fromTo('.services__item-third', { x: '-200%', y: '90%', ease : "easyInOut" }, { y: '10%'});
+	tl.fromTo('.services__item-fourth', { x: '-300%', y: '95%', ease : "easyInOut" }, { y: '15%'});
+	
 	ScrollTrigger.create({
 		animation: tl,
 		trigger: '.services',
 		start: 'top top',
-		end: '1200px',
+		end: '3000px',
 		scrub: 1,
 		pin: true,
 	});
+	
+	// const tl1 = gsap.timeline();
+	// tl1.fromTo('.s1', { scale: 1}, { x: 0, y: 0, scale: 0.4 });
+	// tl1.fromTo('.s2', { scale: 1}, { x: 0, y: 0, scale: 0.4 });
+	// tl1.fromTo('.s3', { scale: 1}, { x: 0, y: 0, scale: 0.4 });
+	// tl1.fromTo('.s4', { scale: 1}, { x: 0, y: 0, scale: 0.4 });
+
+	// ScrollTrigger.create({
+	// 	animation: tl1,
+	// 	trigger: '.services__item',
+	// 	start: 'top top',
+	// 	end: '1000px',
+	// 	scrub: 1,
+	// 	pin: true,
+	// });
+
 
 	// clock
 	function reset() {
@@ -255,19 +269,4 @@ $(document).ready(function () {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
-
