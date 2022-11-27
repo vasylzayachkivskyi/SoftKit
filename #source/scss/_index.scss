@@ -40,7 +40,7 @@
     top: -85px;
   }
 
-  80% {
+  90% {
     height: calc(100vh - 385px);
     top: 0;
   }
@@ -144,6 +144,13 @@
   &.pagemarque{
     opacity: 0;
   }
+  .slide-list{
+    display: flex;
+    align-items: center;
+    li{
+    height: fit-content;
+    }
+  }
 }
 
 .pagewrapper.loaded {
@@ -239,8 +246,7 @@
 }
 
 .animate-left {
-  transition: 1s;
-  animation: moveLeft 5s linear infinite;
+  animation: moveLeft 10s linear infinite;
 }
 
 @keyframes moveLeft {
@@ -252,6 +258,7 @@
 
 .slide-list li {
   display: block;
+  // width: 25vw;
   width: 25vw;
   padding: 0 10px;
 }
@@ -512,6 +519,10 @@
   .formsect__left,
   .formsect__right {
     padding-right: 50px;
+    height: 80px;
+    input{
+      height: 100%;
+    }
   }
 }
 
@@ -677,11 +688,6 @@
     height: 200px;
   }
 
-  .slide-list {
-    li {
-      width: 33vw;
-    }
-  }
 
   .formsect__wrapper .inputfield {
     padding-right: 30px;
@@ -693,6 +699,10 @@
 }
 
 @media (max-width: 992px) {
+  .bottommarquee,
+  .heromarquee__sequence-image img {
+    height: 180px;
+  }
   .footer .P {
     width: 200px;
   }
@@ -810,7 +820,7 @@
 
   .heromarquee.bottommarquee {
     margin-bottom: 40px;
-    height: 180px;
+    height: 160px;
 
     .heromarquee__item {
       height: 160px;
@@ -818,7 +828,9 @@
   }
 
   .heromarquee__sequence-image img {
-    height: 180px;
+    background-size: cover;
+    width: 100%;
+    height: auto;
   }
 
   .slide-list {
@@ -899,11 +911,6 @@
     height: 234px;
   }
 
-  .slide-list {
-    li {
-      width: 45vw;
-    }
-  }
 }
 
 @media (max-width: 576px) {
@@ -918,17 +925,6 @@
     font-size: 36px;
   }
 
-  .heromarquee.bottommarquee {
-    height: 130px;
-
-    .heromarquee__item {
-      height: 130px;
-    }
-  }
-
-  .heromarquee__sequence-image img {
-    height: 130px;
-  }
 
   .formsect__bottom .formsect__right {
     padding-top: 50px;
@@ -967,12 +963,21 @@
     height: 50px;
   }
 
-  .heromarquee .heromarquee__item {
-    // height: 40px;
+  .heromarquee.bottommarquee  {
+    transform: scale(1.5)!important;
+    height: 150px;
+    .heromarquee__item{
+      height: 100%;
+    }
   }
+  
+  
 
   .heromarquee {
     height: 154px;
+    &.pagemarque{
+      height: 130px;
+    }
   }
 
   .footer .P {
@@ -987,6 +992,9 @@
 }
 
 @media (max-width: 375px) {
+  .heromarquee.bottommarquee {
+    transform: scale(3)!important;
+}
   .footer .P {
     width: auto;
 
