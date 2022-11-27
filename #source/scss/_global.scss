@@ -85,11 +85,12 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    transition: background-color .3s cubic-bezier(.22, .61, .36, 1), color .3s cubic-bezier(.22, .61, .36, 1);
+    transition: 0.3s;
 
     &.dark-theme {
         background-color: #121212;
         color: #fff;
+        transition: 0.3s;
     }
 }
 
