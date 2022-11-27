@@ -47,6 +47,7 @@
         color: currentColor;
         padding-bottom: 8px;
         position: relative;
+        transition: color .4s cubic-bezier(.22,.61,.36,1);;
 
         &::after {
           content: "";
@@ -247,7 +248,7 @@
     color: currentColor;
     border: 0.4px solid currentColor;
     border-radius: 60%;
-    transition: 0.3s;
+    transition: .4s cubic-bezier(.22,.61,.36,1);
 
     &:hover {
       color: #fff;
