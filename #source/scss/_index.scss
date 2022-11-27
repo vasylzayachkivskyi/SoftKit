@@ -141,6 +141,15 @@
   display: flex;
   align-items: center;
   transition: 0.3s;
+  &.pagemarque{
+    opacity: 0;
+  }
+}
+
+.pagewrapper.loaded {
+  .heromarquee.pagemarque{
+    opacity: 1;
+  }
 }
 
 .heromarquee .heromarquee__item {
@@ -158,10 +167,13 @@
 
   svg {
     cursor: pointer;
-    transition: 0.3s;
     max-width: 100%;
     max-height: 100%;
     background-size: cover;
+    path{
+      transition: 0.3s!important;
+      fill: currentColor;
+    }
   }
 
   circle,
@@ -228,13 +240,13 @@
 
 .animate-left {
   transition: 1s;
-  animation: moveLeft 10s linear infinite;
+  animation: moveLeft 5s linear infinite;
 }
 
 @keyframes moveLeft {
   100% {
     // transform: translate3d(calc(-100% + 100vw), 0, 0);
-    transform: translate(calc(-100% + 150vw));
+    transform: translate(calc(-100% + 100vw));
   }
 }
 
@@ -266,6 +278,7 @@
   margin: 0 auto;
   img {
     height: 80%;
+    max-width: 100%;
     object-fit: cover;
     margin: 0 auto;
   }

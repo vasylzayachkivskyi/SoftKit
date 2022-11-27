@@ -2,7 +2,7 @@ $(document).ready(function () {
 	// preload
 	setTimeout(function () {
 		$('.pagewrapper').addClass('loaded');
-	}, 3100);
+	}, 3200);
 
 	function notMobile() {
 		return $(window).width() >= 992;
@@ -34,7 +34,7 @@ $(document).ready(function () {
 		if (slidesLength > 0) {
 			$slides.find("li:nth-last-child(-n+5)").clone().prependTo($slides);
 			$slides.addClass("animate-left");
-			$slides.css("animation-duration", slidesLength * 3 + "s");
+			$slides.css("animation-duration", slidesLength * 2 + "s");
 		}
 	}
 
