@@ -79,8 +79,11 @@
     color: currentColor;
 }
 
+.ecomerce-row{
+    background-color: #fff;
+    padding: 100px 0 120px;
+}
 .ecomerce-row__inner {
-    margin: 100px 0 120px;
     display: flex;
     height: 88px;
     width: 100%;
@@ -93,11 +96,16 @@
         background-size: cover;
     }
 }
+.ecomerce-fourthsect img{
+    background-color: #fff;
+}
 // responsive
 
 @media(max-width: 1600px) {
+    .ecomerce-row{
+        padding: 80px 0 100px;
+    }
     .ecomerce-row__inner {
-        margin: 80px 0 100px;
         height: auto;
     }
     .ecomerce-row__item{
@@ -125,8 +133,10 @@
     .ecomerce-firstsect p {
         margin-bottom: 50px;
     }
+    .ecomerce-row{
+        padding: 50px 0;
+    }
     .ecomerce-row__inner {
-        margin: 50px 0;
         flex-wrap: wrap;
         justify-content: center;
     }

@@ -118,25 +118,12 @@ $(document).ready(function () {
 		animation: tl,
 		trigger: '.services',
 		start: 'top top',
-		end: '3000px',
+		end: '3500px',
+		// ease: 'easyInOut',
 		scrub: 1,
 		pin: true,
 	});
 	
-	// const tl1 = gsap.timeline();
-	// tl1.fromTo('.s1', { scale: 1}, { x: 0, y: 0, scale: 0.4 });
-	// tl1.fromTo('.s2', { scale: 1}, { x: 0, y: 0, scale: 0.4 });
-	// tl1.fromTo('.s3', { scale: 1}, { x: 0, y: 0, scale: 0.4 });
-	// tl1.fromTo('.s4', { scale: 1}, { x: 0, y: 0, scale: 0.4 });
-
-	// ScrollTrigger.create({
-	// 	animation: tl1,
-	// 	trigger: '.services__item',
-	// 	start: 'top top',
-	// 	end: '1000px',
-	// 	scrub: 1,
-	// 	pin: true,
-	// });
 
 
 	// clock

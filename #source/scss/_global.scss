@@ -85,12 +85,11 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    transition: 0.3s;
+    transition: background-color .3s;
 
     &.dark-theme {
         background-color: #121212;
         color: #fff;
-        transition: 0.3s;
     }
 }
 
