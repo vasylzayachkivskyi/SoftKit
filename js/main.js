@@ -24,7 +24,7 @@ $(document).ready(function () {
 
 
 	// infinite carousel
-	$('.slide-list').each(function() {
+	$('.slide-list').each(function () {
 		$slides = $(this);
 		$slides.bind("contentchanged", function () {
 			animateLeft($slides);
@@ -68,6 +68,25 @@ $(document).ready(function () {
 
 
 	// GSAP motions
+
+	// services
+
+	const tl = gsap.timeline();
+
+	tl.fromTo('.services__item-second', { x: '-100%', y: '85%', ease: "easyInOut" }, { y: '5%', delay: 0.1, ease: "easyInOut" });
+	tl.fromTo('.services__item-third', { x: '-200%', y: '90%', ease: "easyInOut" }, { y: '10%', ease: "easyInOut" });
+	tl.fromTo('.services__item-fourth', { x: '-300%', y: '95%', ease: "easyInOut" }, { y: '15%', delay: 0.1, ease: "easyInOut" });
+
+	ScrollTrigger.create({
+		animation: tl,
+		trigger: '.services__desc',
+		start: 'top top',
+		end: '6000px',
+		scrub: 0.4,
+		pin: true,
+	});
+
+
 	function motions() {
 		gsap.registerPlugin(ScrollTrigger);
 
@@ -79,13 +98,13 @@ $(document).ready(function () {
 				trigger: ".header",
 				start: "top 0px",
 				end: "top -3000px",
-				scrub: 0.7,
+				scrub: 0.5,
 			}
 		});
 
 		// bottommarquee
 		gsap.fromTo(".bottommarquee", {
-			scale: 2,
+			scale: 1.8,
 			transformOrigin: "100% 100%"
 		},
 			{
@@ -93,9 +112,9 @@ $(document).ready(function () {
 				transformOrigin: "50% 100%",
 				scrollTrigger: {
 					trigger: ".bottomtriger",
-					start: "top 100%",
+					start: "top 120%",
 					end: "top 0",
-					scrub: 0.7,
+					scrub: 0.5,
 					markers: false,
 				}
 			});
@@ -106,23 +125,7 @@ $(document).ready(function () {
 		motions();
 	}
 
-	// services
 
-	const tl = gsap.timeline();
-	
-	tl.fromTo('.services__item-second', { x: '-100%', y: '85%', ease : "easyInOut" }, { y: '5%', delay: 0.1 });
-	tl.fromTo('.services__item-third', { x: '-200%', y: '90%', ease : "easyInOut" }, { y: '10%'});
-	tl.fromTo('.services__item-fourth', { x: '-300%', y: '95%', ease : "easyInOut" }, { y: '15%', delay: 0.1});
-	
-	ScrollTrigger.create({
-		animation: tl,
-		trigger: '.services__desc',
-		start: 'top top',
-		end: '6000px',
-		scrub: 0.4,
-		pin: true,
-	});
-	
 
 
 	// clock

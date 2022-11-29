@@ -675,9 +675,13 @@
       top: 50%;
     }
 
-    50% {
+    40% {
       height: 100vh;
       top: -85px;
+    }
+    80% {
+      height: calc(100vh - 325px);
+      top: 0;
     }
 
     100% {
