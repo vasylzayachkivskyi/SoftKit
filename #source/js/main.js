@@ -35,7 +35,7 @@ $(document).ready(function () {
 			if (slidesLength > 0) {
 				$slides.find("li:nth-last-child(-n+4)").clone().prependTo($slides);
 				$slides.addClass("animate-left");
-				$slides.css("animation-duration", slidesLength * 3 + "s");
+				$slides.css("animation-duration", slidesLength * 4 + "s");
 			}
 		}
 	});
@@ -73,13 +73,13 @@ $(document).ready(function () {
 
 		// topmarquee
 		gsap.to(".topmarquee", {
-			scale: 3,
+			scale: 2,
 			transformOrigin: "50% 100%",
 			scrollTrigger: {
 				trigger: ".header",
 				start: "top 0px",
 				end: "top -3000px",
-				scrub: 0.8,
+				scrub: 0.7,
 			}
 		});
 
@@ -95,7 +95,7 @@ $(document).ready(function () {
 					trigger: ".bottomtriger",
 					start: "top 100%",
 					end: "top 0",
-					scrub: 0.8,
+					scrub: 0.7,
 					markers: false,
 				}
 			});
@@ -110,17 +110,16 @@ $(document).ready(function () {
 
 	const tl = gsap.timeline();
 	
-	tl.fromTo('.services__item-second', { x: '-100%', y: '85%', ease : "easyInOut" }, { y: '5%' });
+	tl.fromTo('.services__item-second', { x: '-100%', y: '85%', ease : "easyInOut" }, { y: '5%', delay: 0.1 });
 	tl.fromTo('.services__item-third', { x: '-200%', y: '90%', ease : "easyInOut" }, { y: '10%'});
-	tl.fromTo('.services__item-fourth', { x: '-300%', y: '95%', ease : "easyInOut" }, { y: '15%'});
+	tl.fromTo('.services__item-fourth', { x: '-300%', y: '95%', ease : "easyInOut" }, { y: '15%', delay: 0.1});
 	
 	ScrollTrigger.create({
 		animation: tl,
-		trigger: '.services',
+		trigger: '.services__desc',
 		start: 'top top',
-		end: '3500px',
-		// ease: 'easyInOut',
-		scrub: 1,
+		end: '6000px',
+		scrub: 0.4,
 		pin: true,
 	});
 	

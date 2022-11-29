@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&family=Montserrat:wght@200;300;400;500;600;700&display=swap");
 @font-face {
   font-family: "Montserrat Alternates", sans-serif;
   font-style: normal;
@@ -134,8 +135,6 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   overflow: hidden;
-  -webkit-transition: background-color 0.3s;
-  transition: background-color 0.3s;
 }
 .pagewrapper.dark-theme {
   background-color: #121212;
@@ -172,8 +171,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-animation: 3.3s ease-in-out preloadShow;
-          animation: 3.3s ease-in-out preloadShow;
+  -webkit-animation: 3.5s ease-in-out preloadShow;
+          animation: 3.5s ease-in-out preloadShow;
 }
 
 .preloader__wrapper-mobile {
@@ -191,11 +190,11 @@ body {
     height: 0;
     top: 50%;
   }
-  60% {
+  40% {
     height: 100vh;
     top: -85px;
   }
-  90% {
+  80% {
     height: calc(100vh - 385px);
     top: 0;
   }
@@ -210,11 +209,11 @@ body {
     height: 0;
     top: 50%;
   }
-  60% {
+  40% {
     height: 100vh;
     top: -85px;
   }
-  90% {
+  80% {
     height: calc(100vh - 385px);
     top: 0;
   }
@@ -475,7 +474,11 @@ body {
   padding: 0 10px;
 }
 
-.services {
+.services__mobile {
+  display: none;
+}
+
+.services__desc {
   height: 100vh;
   width: 400vw;
   display: -webkit-box;
@@ -493,11 +496,11 @@ body {
 
 .services__item-img {
   text-align: center;
-  height: 100%;
-  margin: 0 auto;
+  height: 75%;
+  margin: 2vh auto;
 }
 .services__item-img img {
-  height: 80%;
+  height: 100%;
   max-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -516,7 +519,6 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   background-color: #fff;
-  border-bottom: 1px solid #121212;
 }
 .services__item-header p {
   color: currentColor;
@@ -723,6 +725,7 @@ body {
   line-height: 61px;
   letter-spacing: 0.06em;
   font-style: normal;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 .formsect__right li:nth-of-type(even):after {
   position: absolute;
@@ -900,7 +903,7 @@ body {
       height: 0;
       top: 50%;
     }
-    60% {
+    50% {
       height: 100vh;
       top: -85px;
     }
@@ -914,7 +917,7 @@ body {
       height: 0;
       top: 50%;
     }
-    60% {
+    50% {
       height: 100vh;
       top: -85px;
     }
@@ -925,6 +928,10 @@ body {
   }
 }
 @media (max-width: 1200px) {
+  .services__item-img img {
+    height: auto;
+    width: 100%;
+  }
   .bottommarquee,
 .heromarquee__sequence-image img {
     height: 200px;
@@ -937,6 +944,23 @@ body {
   }
 }
 @media (max-width: 992px) {
+  .services__item-header {
+    height: 30px;
+    margin-bottom: 10px;
+    border: none;
+  }
+  .formsect {
+    margin-top: 0;
+  }
+  .services__desc {
+    display: none;
+  }
+  .services__mobile {
+    display: block;
+  }
+  .services__mobile-item {
+    padding-top: 30px;
+  }
   .bottommarquee,
 .heromarquee__sequence-image img {
     height: 180px;
@@ -965,18 +989,40 @@ body {
   }
 }
 @media (max-width: 768px) {
+  .pagewrapper.dark-theme .preloader__wrapper-mobile {
+    background: #121212;
+  }
   .preloader,
 .heroimage,
 .pagewrapper.loaded .preloader {
-    height: calc(100vh - 414px);
+    height: calc(100vh - 314px);
   }
   .topmarquee {
     opacity: 0;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
+    -webkit-transition: 0s;
+    transition: 0s;
+    -webkit-animation: 3.2s ease-in-out fadeTopMarque;
+            animation: 3.2s ease-in-out fadeTopMarque;
+  }
+  @-webkit-keyframes fadeTopMarque {
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fadeTopMarque {
+    100% {
+      opacity: 1;
+    }
+  }
+  .header__menu > ul > li > a,
+.header__menu-mobile > ul > li > a {
+    -webkit-transition: 0s;
+    transition: 0s;
   }
   .pagewrapper.loaded .topmarquee {
     opacity: 1;
+    -webkit-transition: 0s;
+    transition: 0s;
   }
   .preloader__wrapper {
     display: none;
@@ -1078,7 +1124,7 @@ body {
     height: auto;
   }
   .slide-list {
-    padding: 10px 0;
+    padding: 0;
   }
   .bottommarquee .slide-list {
     padding: 0;
@@ -1134,10 +1180,13 @@ body {
     text-align: center;
   }
   .heromarquee .heromarquee__item {
-    height: 80px;
+    height: 70px;
   }
   .heromarquee {
-    height: 234px;
+    height: 140px;
+  }
+  .heromarquee.pagemarque {
+    height: 220px;
   }
 }
 @media (max-width: 576px) {
@@ -1188,11 +1237,8 @@ body {
   .heromarquee.bottommarquee .heromarquee__item {
     height: 100%;
   }
-  .heromarquee {
-    height: 154px;
-  }
   .heromarquee.pagemarque {
-    height: 130px;
+    height: 80px;
   }
   .footer .P p {
     display: block;
@@ -1222,6 +1268,10 @@ body {
   width: 100%;
   position: relative;
   min-height: 650px;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+  -webkit-animation: 6s ease-in-out appHeroimgAnim;
+          animation: 6s ease-in-out appHeroimgAnim;
 }
 .app-heroimage video,
 .app-heroimage img {
@@ -1235,6 +1285,40 @@ body {
 .app-heroimage .video-tablet,
 .app-heroimage .video-mobile {
   display: none;
+}
+
+@-webkit-keyframes appHeroimgAnim {
+  0% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  70% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes appHeroimgAnim {
+  0% {
+    -webkit-transform: scale(1.3);
+            transform: scale(1.3);
+  }
+  70% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+.pagewrapper.loaded .app-heroimage {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .app-firstsect {
@@ -1330,6 +1414,9 @@ body {
   }
 }
 @media (max-width: 767.8px) {
+  .app-heroimage {
+    margin-bottom: 40px;
+  }
   .app-heroimage video, .app-heroimage img {
     -o-object-fit: contain;
        object-fit: contain;
@@ -1631,7 +1718,11 @@ body {
 }
 @media (max-width: 992px) {
   .design-heroimage {
-    height: auto;
+    height: calc(100vh - 320px);
+  }
+  .design-heroimage svg {
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
   }
   .design-heroimage img {
     height: auto;
@@ -1656,6 +1747,7 @@ body {
   height: 0vh;
   display: block;
   position: fixed;
+  z-index: 22;
   background-color: #ffd8d9;
   left: 0%;
   top: 50%;
@@ -1715,7 +1807,7 @@ body {
 .sectcontent .ecomerce-secondsect__inner p {
   width: 75%;
   text-align: left;
-  margin: 13px auto 0 0px;
+  margin: 15px auto 20px 0px;
 }
 
 .ecomerce-secondsect__bottom {

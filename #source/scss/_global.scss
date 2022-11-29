@@ -85,7 +85,6 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    transition: background-color .3s;
 
     &.dark-theme {
         background-color: #121212;

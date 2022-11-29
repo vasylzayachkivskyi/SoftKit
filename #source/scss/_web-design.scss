@@ -173,7 +173,10 @@
 // responsive
 @media (max-width: 992px) {
   .design-heroimage {
-    height: auto;
+    height: calc(100vh - 320px);
+    svg{
+      transform: scale(1.4);
+    }
 
     img {
       height: auto;
