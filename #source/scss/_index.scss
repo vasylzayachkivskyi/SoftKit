@@ -789,6 +789,9 @@
   }
 
   @keyframes fadeTopMarque {
+    50%{
+      opacity: 0;
+    }
     100% {
       opacity: 1;
     }
@@ -1038,7 +1041,7 @@
 
   .heromarquee {
     &.pagemarque {
-      height: 80px;
+      height: 140px;
     }
   }
 
@@ -1054,6 +1057,11 @@
 }
 
 @media (max-width: 375px) {
+  .heromarquee {
+    &.pagemarque {
+      height: 120px;
+    }
+  }
 
   .heromarquee.bottommarquee {
     transform: scale(3) !important;
