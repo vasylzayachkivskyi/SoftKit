@@ -1479,9 +1479,6 @@ body {
               transform: scale(1);
     }
   }
-  .app-heroimage {
-    margin-bottom: 40px;
-  }
   .app-heroimage video, .app-heroimage img {
     -o-object-fit: contain;
        object-fit: contain;
