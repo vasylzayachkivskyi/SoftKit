@@ -149,6 +149,21 @@
 }
 
 @media(max-width: 767.8px) {
+    @keyframes appHeroimgAnim {
+        0%{
+            transform: scale(1.8);
+        }
+        20%{
+            transform: scale(1.8);
+        }
+        70%{
+            transform: scale(1);
+        }
+        100%{
+            transform: scale(1);
+        }
+        
+    }
     .app-heroimage {
         margin-bottom: 40px;
     }

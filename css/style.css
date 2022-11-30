@@ -545,7 +545,8 @@ body {
 
 .formsect {
   padding: 67px 0 120px;
-  margin-top: 100px;
+  position: relative;
+  z-index: 3;
 }
 
 .formsect__wrapper .formsect__top,
@@ -967,9 +968,6 @@ body {
     height: 100%;
     margin: 0 auto;
   }
-  .formsect {
-    margin-top: 0;
-  }
   .services__desc {
     display: none;
   }
@@ -1214,6 +1212,9 @@ body {
   }
 }
 @media (max-width: 576px) {
+  .formsect {
+    padding: 30px 0 60px;
+  }
   .preloader,
 .heroimage,
 .pagewrapper.loaded .preloader {
@@ -1442,6 +1443,42 @@ body {
   }
 }
 @media (max-width: 767.8px) {
+  @-webkit-keyframes appHeroimgAnim {
+    0% {
+      -webkit-transform: scale(1.8);
+              transform: scale(1.8);
+    }
+    20% {
+      -webkit-transform: scale(1.8);
+              transform: scale(1.8);
+    }
+    70% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes appHeroimgAnim {
+    0% {
+      -webkit-transform: scale(1.8);
+              transform: scale(1.8);
+    }
+    20% {
+      -webkit-transform: scale(1.8);
+              transform: scale(1.8);
+    }
+    70% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
   .app-heroimage {
     margin-bottom: 40px;
   }

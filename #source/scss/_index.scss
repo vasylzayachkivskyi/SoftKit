@@ -335,7 +335,8 @@
 // formsect section
 .formsect {
   padding: 67px 0 120px;
-  margin-top: 100px;
+  position: relative;
+  z-index: 3;
 }
 
 .formsect__wrapper {
@@ -727,13 +728,10 @@
     margin-bottom: 10px;
     border: none;
   }
+
   .services__item-img {
     height: 100%;
     margin: 0 auto;
-}
-
-  .formsect {
-    margin-top: 0;
   }
 
   .services__desc {
@@ -995,9 +993,9 @@
 
 @media (max-width: 576px) {
 
-  // .heromarquee.topmarquee {
-  //   transform: scale(1.8) !important;
-  // }
+  .formsect {
+    padding: 30px 0 60px;
+}
 
   .preloader,
   .heroimage,
