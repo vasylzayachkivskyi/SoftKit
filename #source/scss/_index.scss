@@ -145,6 +145,7 @@
 
   &.pagemarque {
     opacity: 0;
+    background-color: #fff;
   }
 
   .slide-list {
@@ -196,6 +197,10 @@
 .dark-theme {
   .heromarquee {
     background-color: #121212;
+
+    &.pagemarque {
+      background-color: #fff;
+    }
 
     .heromarquee__item {
       .darktext {
@@ -565,7 +570,8 @@
   align-items: center;
   margin-top: 20px;
 
-  label {
+  label,
+  a {
     cursor: pointer;
     font-weight: 300;
     font-size: 14px;
@@ -679,6 +685,7 @@
       height: 100vh;
       top: -85px;
     }
+
     80% {
       height: calc(100vh - 325px);
       top: 0;
@@ -696,7 +703,7 @@
   .services__item-img img {
     height: auto;
     width: 100%;
-}
+  }
 
   .bottommarquee,
   .heromarquee__sequence-image img {
@@ -714,11 +721,16 @@
 }
 
 @media (max-width: 992px) {
+
   .services__item-header {
     height: 30px;
     margin-bottom: 10px;
     border: none;
   }
+  .services__item-img {
+    height: 100%;
+    margin: 0 auto;
+}
 
   .formsect {
     margin-top: 0;
@@ -732,7 +744,7 @@
     display: block;
 
     &-item {
-      padding-top: 30px;
+      padding-top: 20px;
     }
   }
 
@@ -773,6 +785,7 @@
 
 @media (max-width: 768px) {
 
+
   .pagewrapper.dark-theme {
     .preloader__wrapper-mobile {
       background: #121212;
@@ -793,9 +806,10 @@
   }
 
   @keyframes fadeTopMarque {
-    50%{
+    50% {
       opacity: 0;
     }
+
     100% {
       opacity: 1;
     }
@@ -971,8 +985,9 @@
 
   .heromarquee {
     height: 140px;
-      &.pagemarque {
-        height: 220px;
+
+    &.pagemarque {
+      height: 220px;
     }
   }
 

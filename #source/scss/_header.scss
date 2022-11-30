@@ -1,5 +1,15 @@
 .header {
   position: relative;
+  &.notanim{
+    .header__logo,
+    .header__menu-item,
+    .header__box {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+
+  }
 }
 
 .header__wrapper {
@@ -432,7 +442,7 @@
 .header__menu-item {
   position: relative;
   z-index: 3;
-  transform: translate(0, 60px);
+  transform: translateY(60px);
   opacity: 0;
 }
 
@@ -448,17 +458,17 @@
 
 @keyframes fadeIn {
   0% {
-    transform: translate(0, 60px);
+    transform: translateY(60px);
     opacity: 0;
   }
 
   80% {
-    transform: translate(0px, -7px);
+    transform: translateY(-7px);
     opacity: 1;
   }
 
   100% {
-    transform: translate(0px, 0px);
+    transform: translateY(0px);
     opacity: 1;
   }
 }
