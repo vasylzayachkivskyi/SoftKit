@@ -397,6 +397,7 @@
     color: currentColor;
     position: relative;
     z-index: 2;
+    border-radius: 0;
 
     &::placeholder {
       transition: 0.3s;
