@@ -1,4 +1,4 @@
-<svg width="340" height="341" viewBox="0 0 340 341" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg class="stepCircle" width="340" height="341" viewBox="0 0 340 341" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_438_7702)">
 <circle cx="170.819" cy="170.881" r="121.092" stroke="#57949F" stroke-width="20"/>
 </g>
@@ -16,4 +16,19 @@
 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_438_7702"/>
 </filter>
 </defs>
+<style>
+.stepCircle {
+    animation: 10s linear infinite wayStepCircle;
+}
+
+@keyframes wayStepCircle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+</style>
 </svg>

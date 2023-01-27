@@ -75,7 +75,7 @@
 
     100% {
         opacity: 0;
-        
+
     }
 }
 
@@ -479,6 +479,21 @@
     }
 }
 
+.stepCircle {
+    animation: 13s linear infinite wayStepCircle;
+}
+
+@keyframes wayStepCircle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
 
 // RESPONSIVE
 
@@ -880,3 +895,4 @@
         padding: 30px 0 80px;
     }
 }
+
