@@ -73,15 +73,16 @@ $(document).ready(function () {
 
 	const tl = gsap.timeline();
 
-	tl.fromTo('.services__item-second', { x: '-100%', y: '85%', ease: "easyInOut" }, { y: '5%', delay: 0.1, ease: "easyInOut" });
-	tl.fromTo('.services__item-third', { x: '-200%', y: '90%', ease: "easyInOut" }, { y: '10%', ease: "easyInOut" });
-	tl.fromTo('.services__item-fourth', { x: '-300%', y: '95%', ease: "easyInOut" }, { y: '15%', delay: 0.1, ease: "easyInOut" });
+	tl.fromTo('.services__item-second', { x: '-100%', y: '80%', ease: "easyInOut" }, { y: '5%', delay: 0.1, ease: "easyInOut" });
+	tl.fromTo('.services__item-third', { x: '-200%', y: '85%', ease: "easyInOut" }, { y: '10%', ease: "easyInOut" });
+	tl.fromTo('.services__item-fourth', { x: '-300%', y: '90%', ease: "easyInOut" }, { y: '15%', ease: "easyInOut" });
+	tl.fromTo('.services__item-five', { x: '-400%', y: '95%', ease: "easyInOut" }, { y: '20%', delay: 0.1, ease: "easyInOut" });
 
 	ScrollTrigger.create({
 		animation: tl,
 		trigger: '.services__desc',
 		start: 'top top',
-		end: '6000px',
+		end: '5500px',
 		scrub: 0.4,
 		pin: true,
 	});
@@ -169,79 +170,26 @@ $(document).ready(function () {
 		});
 	});
 
-	// custom Smooth Scroll for GSAP
-	// smoothScroll(".scrollContent");
-	// function smoothScroll(content, viewport, smoothness) {
-	// 	content = gsap.utils.toArray(content)[0];
-	// 	smoothness = smoothness || 1;
 
-	// 	gsap.set(viewport || content.parentNode, { overflow: "hidden", position: "fixed", height: "100%", width: "100%", top: 0, left: 0, right: 0, bottom: 0 });
-	// 	gsap.set(content, { overflow: "visible", width: "100%" });
-
-	// 	let getProp = gsap.getProperty(content),
-	// 		setProp = gsap.quickSetter(content, "y", "px"),
-	// 		setScroll = ScrollTrigger.getScrollFunc(window),
-	// 		removeScroll = () => content.style.overflow = "visible",
-	// 		killScrub = trigger => {
-	// 			let scrub = trigger.getTween ? trigger.getTween() : gsap.getTweensOf(trigger.animation)[0]; // getTween() was added in 3.6.2
-	// 			scrub && scrub.pause();
-	// 			trigger.animation.progress(trigger.progress);
-	// 		},
-	// 		height, isProxyScrolling;
-
-	// 	function refreshHeight() {
-	// 		height = content.clientHeight;
-	// 		content.style.overflow = "visible"
-	// 		document.body.style.height = height + "px";
-	// 		return height - document.documentElement.clientHeight;
-	// 	}
-
-	// 	ScrollTrigger.addEventListener("refresh", () => {
-	// 		removeScroll();
-	// 		requestAnimationFrame(removeScroll);
-	// 	})
-	// 	ScrollTrigger.defaults({ scroller: content });
-	// 	ScrollTrigger.prototype.update = p => p; // works around an issue in ScrollTrigger 3.6.1 and earlier (fixed in 3.6.2, so this line could be deleted if you're using 3.6.2 or later)
-
-	// 	ScrollTrigger.scrollerProxy(content, {
-	// 		scrollTop(value) {
-	// 			if (arguments.length) {
-	// 				isProxyScrolling = true; // otherwise, if snapping was applied (or anything that attempted to SET the scroll proxy's scroll position), we'd set the scroll here which would then (on the next tick) update the content tween/ScrollTrigger which would try to smoothly animate to that new value, thus the scrub tween would impede the progress. So we use this flag to respond accordingly in the ScrollTrigger's onUpdate and effectively force the scrub to its end immediately.
-	// 				setProp(-value);
-	// 				setScroll(value);
-	// 				return;
-	// 			}
-	// 			return -getProp("y");
-	// 		},
-	// 		scrollHeight: () => document.body.scrollHeight,
-	// 		getBoundingClientRect() {
-	// 			return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-	// 		}
-	// 	});
-
-	// 	return ScrollTrigger.create({
-	// 		animation: gsap.fromTo(content, { y: 0 }, {
-	// 			y: () => document.documentElement.clientHeight - height,
-	// 			ease: "none",
-	// 			onUpdate: ScrollTrigger.update
-	// 		}),
-	// 		scroller: window,
-	// 		invalidateOnRefresh: true,
-	// 		start: 0,
-	// 		end: refreshHeight,
-	// 		refreshPriority: -999,
-	// 		scrub: smoothness,
-	// 		onUpdate: self => {
-	// 			if (isProxyScrolling) {
-	// 				killScrub(self);
-	// 				isProxyScrolling = false;
-	// 			}
-	// 		},
-	// 		onRefresh: killScrub // when the screen resizes, we just want the animation to immediately go to the appropriate spot rather than animating there, so basically kill the scrub.
-	// 	});
-	// }
-
-
+  // ------------ checkbox form -------------------- //
+  $('.jq-checkbox').on('change', function(){
+    if($(this).hasClass('checked')) {
+      console.log('disable')
+      $('.formsect__btn').attr('disabled', false);
+    }
+    else {
+      $('.formsect__btn').attr('disabled', true);
+    }
+  });
+	
+		//thank page 	
+	document.addEventListener('wpcf7mailsent', function (event) {
+		if ('296' == event.detail.contactFormId) {
+			location = 'http://softkit/en/thank-you-page/';
+		} else if ('295' == event.detail.contactFormId) {
+			location = 'http://softkit/thank-you-page/';
+		}
+	}, false);
 
 
 

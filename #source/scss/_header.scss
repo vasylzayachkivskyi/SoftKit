@@ -1,6 +1,8 @@
 .header {
   position: relative;
-  &.notanim{
+
+  &.notanim {
+
     .header__logo,
     .header__menu-item,
     .header__box {
@@ -423,38 +425,21 @@
 
 // animation
 .header__logo {
-  animation: 1.3s ease-in-out 2.5s fadeIn;
+  animation: 4.3s ease-in-out fadeIn;
 }
 
 .header__menu-item:nth-child(1) {
-  animation: 1.3s ease-in-out 2.7s fadeIn;
+  animation: 4.6s ease-in-out fadeIn;
 }
 
 .header__menu-item:nth-child(2) {
-  animation: 1.3s ease-in-out 2.9s fadeIn;
+  animation: 4.9s ease-in-out fadeIn;
 }
 
 .header__menu-item:nth-child(3) {
-  animation: 1.3s ease-in-out 3s fadeIn;
+  animation: 5.2s ease-in-out fadeIn;
 }
 
-.header__logo,
-.header__menu-item {
-  position: relative;
-  z-index: 3;
-  transform: translateY(60px);
-  opacity: 0;
-}
-
-.pagewrapper.loaded {
-
-  .header__logo,
-  .header__menu-item {
-    position: initial;
-    transform: initial;
-    opacity: 1;
-  }
-}
 
 @keyframes fadeIn {
   0% {
@@ -462,16 +447,26 @@
     opacity: 0;
   }
 
-  80% {
+  55% {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+
+  85% {
     transform: translateY(-7px);
     opacity: 1;
   }
 
   100% {
-    transform: translateY(0px);
+    transform: translateY(0);
     opacity: 1;
   }
 }
+
+.header__menu-item {
+  position: initial;
+}
+
 
 // RESPONSIVE
 
@@ -531,7 +526,7 @@
   }
 
   .header__menu-mobile .sub-menu {
-    height: 230px;
+    height: auto;
   }
 
   .header__menu-mobile .sub-menu ul {
@@ -572,7 +567,8 @@
 @media (max-width: 576px) {
   .header__lang ul .lang-item {
     padding-bottom: 2px;
-}
+  }
+
   .header__lang ul {
     width: 53px;
     height: 26px;
@@ -593,20 +589,41 @@
   }
 
   .header__menu-mobile .sub-menu blockquote p {
-    font-size: 10px;
+    font-size: 9px;
   }
 
   .header__menu-mobile .sub-menu blockquote p+p {
-    margin-left: 5px;
+    margin-left: 4px;
   }
 
   .header__menu-mobile .sub-menu blockquote p+p:before {
-    margin-right: 5px;
-    font-size: 10px;
+    margin-right: 4px;
+    font-size: 9px;
+  }
+
+  .header__menu-mobile .sub-menu span {
+    font-size: 26px;
   }
 }
 
 @media (max-width: 375px) {
+
+  .header__menu-mobile .sub-menu blockquote p {
+    font-size: 8px;
+  }
+
+  .header__menu-mobile .sub-menu>p {
+    font-size: 12px;
+  }
+
+  .header__menu-mobile .sub-menu blockquote p+p {
+    margin-left: 2px;
+  }
+
+  .header__menu-mobile .sub-menu blockquote p+p:before {
+    margin-right: 2px;
+    font-size: 8px;
+  }
 
   .header__menu-mobile>ul>li>a,
   .header__menu>ul>li>a {

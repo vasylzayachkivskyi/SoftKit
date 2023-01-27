@@ -1,7 +1,6 @@
 <svg width="1440" height="1395" viewBox="0 0 1440 1395" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
   <style>
-
     .box-1 {
       animation: 9s ease-in-out infinite boxesWay1;
     }

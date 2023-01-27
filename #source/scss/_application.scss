@@ -1,38 +1,85 @@
 .app-heroimage {
-    background: #f2ce6c;
+    background: #eed480;
     height: calc(100vh - 85px);
     width: 100%;
     position: relative;
-    transform: scale(1.3);
-      animation: 6s ease-in-out appHeroimgAnim;
-    video,
-    img{
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 20%;
-      margin: 0 auto;
+    animation: 5s ease-in-out appHeroimgAnim;
+    svg {
+        height: 100%;
+        max-width: 100%;
+        object-fit: cover;
     }
-    .video-tablet,
-    .video-mobile{
-        display: none;
-    }
-}
-@keyframes appHeroimgAnim {
-    0%{
-        transform: scale(1.3);
-    }
-    70%{
-        transform: scale(1);
-    }
-    100%{
-        transform: scale(1);
-    }
-    
 }
 
-.pagewrapper.loaded {
-    .app-heroimage {
-          transform: scale(1);
+.app_phone-1 {
+    animation: 3s ease-in-out appPhoneAnim1;
+}
+
+.app_phone-2 {
+    animation: 2.6s ease-in-out appPhoneAnim2;
+}
+
+.app_phone-3 {
+    animation: 3s ease-in-out appPhoneAnim3;
+}
+
+@keyframes appPhoneAnim1 {
+    0% {
+        transform: translate(-40%, 40%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes appPhoneAnim2 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes appPhoneAnim3 {
+    0% {
+        transform: translate(40%, -40%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+.app-heroimage__desctope {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-heroimage__mobile {
+    display: none;
+}
+
+@keyframes appHeroimgAnim {
+    0% {
+        transform: scale(1.3);
+    }
+
+    70% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
     }
 
 }
@@ -76,7 +123,6 @@
     }
 }
 
-
 .app-fourthsect__top,
 .app-fourthsect__bottom {
     position: absolute;
@@ -116,16 +162,6 @@
 
 @media(max-width: 1200px) {
 
-    .app-heroimage {
-        .video-desc,
-        .video-mobile{
-            display: none;
-        }
-        .video-tablet{
-            display: block;
-        }
-    }
-    
     .app-firstsect {
         padding-top: 70px;
     }
@@ -149,36 +185,92 @@
 }
 
 @media(max-width: 767.8px) {
-    @keyframes appHeroimgAnim {
-        0%{
-            transform: scale(1.8);
-        }
-        20%{
-            transform: scale(1.8);
-        }
-        70%{
-            transform: scale(1);
-        }
-        100%{
-            transform: scale(1);
-        }
-        
+    .app-heroimage__mobile {
+        display: flex;
+        justify-content: center;
     }
 
-    .app-heroimage video, .app-heroimage img {
-        object-fit: contain;
-        object-position: 50% 0;
+    .app-heroimage__desctope {
+        display: none;
     }
-    .app-heroimage {
-        height: calc(100vh - 180px);
-        .video-desc,
-        .video-tablet{
-            display: none;
+
+    @keyframes appHeroimgAnim {
+        0% {
+            transform: scale(1.8);
         }
-        .video-mobile{
-            display: block;
+
+        20% {
+            transform: scale(1.8);
+        }
+
+        70% {
+            transform: scale(1);
+        }
+
+        100% {
+            transform: scale(1);
         }
     }
+
+    .app_phone-1 {
+        animation: 1.5s ease-in appPhoneAnim1;
+    }
+
+    .app_phone-2 {
+        animation: 1.5s ease-in appPhoneAnim2;
+    }
+
+    .app_phone-3 {
+        animation: 1.5s ease-in appPhoneAnim3;
+    }
+
+    @keyframes appPhoneAnim1 {
+        0% {
+            transform: translateX(-80%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes appPhoneAnim2 {
+        0% {
+            transform: translateX(80%);
+            opacity: 0;
+        }
+
+        20% {
+            transform: translateX(80%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes appPhoneAnim3 {
+        0% {
+            transform: translateX(-80%);
+            opacity: 0;
+        }
+
+        40% {
+            transform: translateX(-80%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+
     .app-firstsect {
         padding-top: 50px;
     }
