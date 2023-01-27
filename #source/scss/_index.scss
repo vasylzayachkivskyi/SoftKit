@@ -146,8 +146,9 @@
   transition: 0.3s;
 
   &.pagemarque {
-    opacity: 0;
+    opacity: 1;
     background-color: #fff;
+    animation: 3s ease-in-out showMarque;
   }
 
   .slide-list {
@@ -158,6 +159,19 @@
       height: fit-content;
     }
   }
+}
+
+@keyframes showMarque {
+  0%{
+    opacity: 0;
+  }
+  70%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+  
 }
 
 .heromarquee .heromarquee__item {
